@@ -27,7 +27,11 @@ public class Radio {
 
     public void setCurrentRadio(int newRadio) {
         currentRadio = newRadio;
+        {
+            return;
+        }
     }
+
 
     public int getCurrentRadio() {
         return currentRadio;
@@ -54,22 +58,6 @@ public class Radio {
             currentVolume = currentVolume - 1;
         } else {
             currentVolume = minVolume;
-        }
-    }
-
-    public void minVolume() {
-        if (currentVolume <= minVolume) {
-            currentVolume = minVolume;
-        } else {
-            currentVolume = currentVolume + 1;
-        }
-    }
-
-    public void maxVolume() {
-        if (currentVolume >= maxVolume) {
-            currentVolume = maxVolume;
-        } else {
-            currentVolume -= 1;
         }
     }
 }

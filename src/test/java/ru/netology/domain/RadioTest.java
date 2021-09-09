@@ -84,40 +84,4 @@ class RadioTest {
         int actual = rds.getCurrentVolume();
         assertEquals(expected, actual);
     }
-
-    @Test
-    void shouldSetMinVolume() {
-        rds.setCurrentVolume(0);
-        rds.minVolume();
-        int expected =0;
-        int actual = rds.getCurrentVolume();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldSetMinVolume2() {
-        rds.setCurrentVolume(2);
-        rds.minVolume();
-        int expected =3;
-        int actual = rds.getCurrentVolume();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldSetMaxVolume() {
-        rds.setCurrentVolume(10);
-        rds.maxVolume();
-        int expected =10;
-        int actual = rds.getCurrentVolume();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldSetMaxVolume2() {
-        rds.setCurrentVolume(2);
-        rds.maxVolume();
-        int expected =1;
-        int actual = rds.getCurrentVolume();
-        assertEquals(expected, actual);
-    }
 }
