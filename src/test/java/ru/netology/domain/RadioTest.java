@@ -45,8 +45,26 @@ class RadioTest {
 
     @Test
     void shouldSetCurrentRadio() {
+        rds.setCurrentRadio(0);
+        assertEquals(0, rds.getCurrentRadio());
+    }
+
+    @Test
+    void shouldSetCurrentRadio2() {
         rds.setCurrentRadio(3);
         assertEquals(3, rds.getCurrentRadio());
+    }
+
+    @Test
+    void shouldSetCurrentRadio3() {
+        rds.setCurrentRadio(7);
+        assertEquals(7, rds.getCurrentRadio());
+    }
+
+    @Test
+    void shouldSetCurrentRadio4() {
+        rds.setCurrentRadio(9);
+        assertEquals(9, rds.getCurrentRadio());
     }
 
     @Test
