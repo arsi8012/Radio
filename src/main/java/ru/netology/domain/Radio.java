@@ -24,17 +24,18 @@ public class Radio {
         }
     }
 
+    public void currentRadio(int newRadio) {
+        if (newRadio <= firstRadio) {
+            return;
+        }
+        if (newRadio >= lastRadio) {
+            return;
+        }
+        currentRadio = newRadio;
+    }
+
     public void setCurrentRadio(int currentRadio) {
-        if (currentRadio <= firstRadio) {
-            return;
-        } else {
-            this.currentRadio = currentRadio;
-        }
-        if (currentRadio >= lastRadio) {
-            return;
-        } else {
-            this.currentRadio = currentRadio;
-        }
+        this.currentRadio = currentRadio;
     }
 
     public int getCurrentRadio() {

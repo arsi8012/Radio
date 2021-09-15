@@ -9,7 +9,7 @@ class RadioTest {
 
     @Test
     void shouldNextRadio() {
-        rds.setCurrentRadio(10);
+        rds.setCurrentRadio(9);
         rds.nextRadio();
         int expected = 0;
         int actual = rds.getCurrentRadio();
@@ -44,27 +44,21 @@ class RadioTest {
     }
 
     @Test
-    void shouldSetCurrentRadio() {
-        rds.setCurrentRadio(0);
+    void shouldCurrentRadio() {
+        rds.currentRadio(0);
         assertEquals(0, rds.getCurrentRadio());
     }
 
     @Test
-    void shouldSetCurrentRadio2() {
-        rds.setCurrentRadio(3);
-        assertEquals(3, rds.getCurrentRadio());
+    void shouldCurrentRadio2() {
+        rds.currentRadio(4);
+        assertEquals(4, rds.getCurrentRadio());
     }
 
     @Test
-    void shouldSetCurrentRadio3() {
-        rds.setCurrentRadio(7);
-        assertEquals(7, rds.getCurrentRadio());
-    }
-
-    @Test
-    void shouldSetCurrentRadio4() {
-        rds.setCurrentRadio(9);
-        assertEquals(9, rds.getCurrentRadio());
+    void shouldCurrentRadio3() {
+        rds.currentRadio(9);
+        assertEquals(0, rds.getCurrentRadio());
     }
 
     @Test
