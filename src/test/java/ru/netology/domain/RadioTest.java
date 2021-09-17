@@ -44,13 +44,13 @@ class RadioTest {
     @Test
     void shouldSetNewRadio() {
         rds.setNewRadio(0);
-        assertEquals(0, rds.getNewRadio());
+        assertEquals(9, rds.getNewRadio());
     }
 
     @Test
     void shouldSetNewRadio2() {
-        rds.setNewRadio(1);
-        assertEquals(1, rds.getNewRadio());
+        rds.setNewRadio(-1);
+        assertEquals(9, rds.getNewRadio());
     }
 
     @Test
@@ -61,6 +61,18 @@ class RadioTest {
 
     @Test
     void shouldSetNewRadio4() {
+        rds.setNewRadio(10);
+        assertEquals(0, rds.getNewRadio());
+    }
+
+    @Test
+    void shouldSetNewRadio5() {
+        rds.setNewRadio(1);
+        assertEquals(1, rds.getNewRadio());
+    }
+
+    @Test
+    void shouldSetNewRadio6() {
         rds.setNewRadio(8);
         assertEquals(8, rds.getNewRadio());
     }

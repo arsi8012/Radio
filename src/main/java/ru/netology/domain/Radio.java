@@ -31,9 +31,11 @@ public class Radio {
 
     public void setNewRadio(int newRadio) {
         if (newRadio <= firstRadio) {
+            this.newRadio = lastRadio;
             return;
         }
         if (newRadio >= lastRadio) {
+            this.newRadio = firstRadio;
             return;
         }
         this.newRadio = newRadio;
