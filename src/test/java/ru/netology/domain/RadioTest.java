@@ -22,9 +22,10 @@ class RadioTest {
         assertEquals(6, rds.getCurrentRadio());
     }
 
+
     @Test
     void shouldSetCurrentRadio() {
-        rds.setCurrentRadio(19);
+        rds.setCurrentRadio(9);
         int expected = 0;
         int actual = rds.getCurrentRadio();
         assertEquals(expected, actual);
@@ -40,22 +41,6 @@ class RadioTest {
 
     @Test
     void shouldSetCurrentRadio3() {
-        rds.setCurrentRadio(20);
-        int expected = 0;
-        int actual = rds.getCurrentRadio();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldSetCurrentRadio4() {
-        rds.setCurrentRadio(-1);
-        int expected = 9;
-        int actual = rds.getCurrentRadio();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldSetCurrentRadio5() {
         rds.setCurrentRadio(1);
         int expected = 1;
         int actual = rds.getCurrentRadio();
@@ -64,8 +49,8 @@ class RadioTest {
 
     @Test
     void shouldSetCurrentRadio6() {
-        rds.setCurrentRadio(18);
-        int expected = 0;
+        rds.setCurrentRadio(8);
+        int expected = 8;
         int actual = rds.getCurrentRadio();
         assertEquals(expected, actual);
     }
