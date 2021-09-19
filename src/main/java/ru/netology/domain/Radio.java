@@ -2,19 +2,23 @@ package ru.netology.domain;
 
 public class Radio {
     private int currentRadio;
-    int firstRadio;
-    int lastRadio;
-    int maxVolume;
-    int minVolume;
+    private int firstRadio = 0;
+    private int lastRadio = 9;
+//    private int newRadio;
+    private int maxVolume = 10;
+    private int minVolume = 0;
     private int currentVolume;
 
-    public Radio(int currentRadio, int firstRadio, int lastRadio, int maxVolume, int minVolume, int currentVolume) {
+    public void setCurrentRadio(int currentRadio) {
+        if (currentRadio >= lastRadio) {
+            this.currentRadio = currentRadio;
+            return;
+        }
+        if (currentRadio <= firstRadio) {
+            this.currentRadio = currentRadio;
+            return;
+        }
         this.currentRadio = currentRadio;
-        this.firstRadio = firstRadio;
-        this.lastRadio = lastRadio;
-        this.maxVolume = maxVolume;
-        this.minVolume = minVolume;
-        this.currentVolume = currentVolume;
     }
 
     public void nextRadio() {
@@ -33,21 +37,24 @@ public class Radio {
         }
     }
 
-    public void setCurrentRadio(int currentRadio) {
-        if (currentRadio <= firstRadio) {
-            return;
-        } else {
-            this.currentRadio = currentRadio;
-        }
-        if (currentRadio >= lastRadio) {
-            return;
-        } else {
-            this.currentRadio = currentRadio;
-        }
-    }
+//    public void setNewRadio(int newRadio) {
+//        if (newRadio <= firstRadio) {
+//            this.newRadio = lastRadio;
+//            return;
+//        }
+//        if (newRadio >= lastRadio) {
+//            this.newRadio = firstRadio;
+//            return;
+//        }
+//        this.newRadio = newRadio;
+//    }
+
+//    public int getNewRadio() {
+//        return newRadio;
+//    }
 
     public int getCurrentRadio() {
-        return currentRadio;
+        return this.currentRadio;
     }
 
     public void setCurrentVolume(int currentVolume) {

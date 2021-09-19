@@ -5,22 +5,20 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-    Radio rds = new Radio(0 , 0, 10, 100, 0, 0);
+    Radio rds = new Radio();
 
     @Test
     void shouldNextRadio() {
-        rds.setCurrentRadio(10);
+        rds.setCurrentRadio(9);
         rds.nextRadio();
-        int expected = 0;
-        int actual = rds.getCurrentRadio();
-        assertEquals(expected, actual);
+        assertEquals(0, rds.getCurrentRadio());
     }
 
     @Test
     void shouldNextRadio2() {
-        rds.setCurrentRadio(5);
+        rds.setCurrentRadio(8);
         rds.nextRadio();
-        int expected = 6;
+        int expected = 9;
         int actual = rds.getCurrentRadio();
         assertEquals(expected, actual);
     }
@@ -29,42 +27,42 @@ class RadioTest {
     void shouldPrevRadio() {
         rds.setCurrentRadio(0);
         rds.prevRadio();
-        int expected = 10;
+        int expected = 9;
         int actual = rds.getCurrentRadio();
         assertEquals(expected, actual);
     }
 
     @Test
     void shouldPrevRadio2() {
-        rds.setCurrentRadio(2);
+        rds.setCurrentRadio(1);
         rds.prevRadio();
-        int expected = 3;
+        int expected = 2;
         int actual = rds.getCurrentRadio();
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldSetCurrentRadio() {
+    void shouldSetNewRadio() {
         rds.setCurrentRadio(0);
         assertEquals(0, rds.getCurrentRadio());
     }
 
     @Test
-    void shouldSetCurrentRadio2() {
-        rds.setCurrentRadio(3);
-        assertEquals(3, rds.getCurrentRadio());
-    }
-
-    @Test
-    void shouldSetCurrentRadio3() {
-        rds.setCurrentRadio(7);
-        assertEquals(7, rds.getCurrentRadio());
-    }
-
-    @Test
-    void shouldSetCurrentRadio4() {
+    void shouldSetNewRadio2() {
         rds.setCurrentRadio(9);
         assertEquals(9, rds.getCurrentRadio());
+    }
+
+    @Test
+    void shouldSetNewRadio3() {
+        rds.setCurrentRadio(1);
+        assertEquals(1, rds.getCurrentRadio());
+    }
+
+    @Test
+    void shouldSetNewRadio4() {
+        rds.setCurrentRadio(8);
+        assertEquals(8, rds.getCurrentRadio());
     }
 
     @Test
@@ -78,9 +76,9 @@ class RadioTest {
 
     @Test
     void shouldIncreaseVolume2() {
-        rds.setCurrentVolume(100);
+        rds.setCurrentVolume(10);
         rds.increaseVolume();
-        int expected = 100;
+        int expected = 10;
         int actual = rds.getCurrentVolume();
         assertEquals(expected, actual);
     }
