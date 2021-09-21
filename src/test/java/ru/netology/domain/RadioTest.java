@@ -9,15 +9,62 @@ class RadioTest {
 
     @Test
     void shouldTotalRadio() {
-        Radio rds = new Radio (50);
-        rds.setTotalRadio(50);
-        assertEquals(50, rds.getTotalRadio());
+        Radio rds = new Radio (30);
+        rds.setTotalRadio(30);
+        assertEquals(30, rds.getTotalRadio());
+    }
+
+    @Test
+    void shouldPrevRadio3() {
+        Radio rds = new Radio (30);
+        rds.setTotalRadio(30);
+        rds.setCurrentRadio(0);
+        rds.prevRadio();
+        int expected = 29;
+        int actual = rds.getCurrentRadio();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldNextRadio() {
+        rds.setCurrentRadio(9);
+        rds.nextRadio();
+        int expected = 0;
+        int actual = rds.getCurrentRadio();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldNextRadio2() {
+        rds.setCurrentRadio(8);
+        rds.nextRadio();
+        int expected = 9;
+        int actual = rds.getCurrentRadio();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldPrevRadio() {
+        rds.setCurrentRadio(0);
+        rds.prevRadio();
+        int expected = 9;
+        int actual = rds.getCurrentRadio();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldPrevRadio2() {
+        rds.setCurrentRadio(1);
+        rds.prevRadio();
+        int expected = 2;
+        int actual = rds.getCurrentRadio();
+        assertEquals(expected, actual);
     }
 
     @Test
     void shouldSetCurrentRadio() {
-        rds.setCurrentRadio(19);
-        int expected = 0;
+        rds.setCurrentRadio(9);
+        int expected = 9;
         int actual = rds.getCurrentRadio();
         assertEquals(expected, actual);
     }
@@ -25,29 +72,13 @@ class RadioTest {
     @Test
     void shouldSetCurrentRadio2() {
         rds.setCurrentRadio(0);
-        int expected = 19;
-        int actual = rds.getCurrentRadio();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldSetCurrentRadio3() {
-        rds.setCurrentRadio(20);
         int expected = 0;
         int actual = rds.getCurrentRadio();
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldSetCurrentRadio4() {
-        rds.setCurrentRadio(-1);
-        int expected = 19;
-        int actual = rds.getCurrentRadio();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldSetCurrentRadio5() {
+    void shouldSetCurrentRadio3() {
         rds.setCurrentRadio(1);
         int expected = 1;
         int actual = rds.getCurrentRadio();
@@ -56,8 +87,8 @@ class RadioTest {
 
     @Test
     void shouldSetCurrentRadio6() {
-        rds.setCurrentRadio(18);
-        int expected = 18;
+        rds.setCurrentRadio(8);
+        int expected = 8;
         int actual = rds.getCurrentRadio();
         assertEquals(expected, actual);
     }

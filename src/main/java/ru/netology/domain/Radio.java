@@ -4,7 +4,7 @@ public class Radio {
     private int currentRadio;
     private int totalRadio = 10;
     private int firstRadio = 0;
-    private int lastRadio = 19;
+    private int lastRadio = 9;
     private int maxVolume = 100;
     private int minVolume = 0;
     private int currentVolume;
@@ -13,24 +13,40 @@ public class Radio {
         this.totalRadio = totalRadio;
     }
 
-    public void setTotalRadio(int totalRadio) {
-        this.totalRadio = totalRadio;
-    }
-
     public int getTotalRadio() {
         return totalRadio;
+    }
+
+    public void setTotalRadio(int totalRadio) {
+        this.totalRadio = totalRadio;
     }
 
     public Radio() {
     }
 
+    public void nextRadio() {
+        if (currentRadio >= lastRadio) {
+            currentRadio = firstRadio;
+        } else {
+            currentRadio += 1;
+        }
+    }
+
+    public void prevRadio() {
+        if (currentRadio <= firstRadio) {
+            currentRadio = totalRadio - 1;
+        } else {
+            currentRadio += 1;
+        }
+    }
+
     public void setCurrentRadio(int currentRadio) {
         if (currentRadio <= firstRadio) {
-            this.currentRadio = lastRadio;
+            this.currentRadio = firstRadio;
             return;
         }
         if (currentRadio >= lastRadio) {
-            this.currentRadio = firstRadio;
+            this.currentRadio = lastRadio;
             return;
         }
         this.currentRadio = currentRadio;
