@@ -13,12 +13,12 @@ public class Radio {
         this.totalRadio = totalRadio;
     }
 
-    public int getTotalRadio() {
-        return totalRadio;
-    }
-
     public void setTotalRadio(int totalRadio) {
         this.totalRadio = totalRadio;
+    }
+
+    public int getTotalRadio() {
+        return totalRadio;
     }
 
     public Radio() {

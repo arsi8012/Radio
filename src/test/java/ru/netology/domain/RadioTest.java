@@ -56,9 +56,7 @@ class RadioTest {
     void shouldPrevRadio2() {
         rds.setCurrentRadio(1);
         rds.prevRadio();
-        int expected = 2;
-        int actual = rds.getCurrentRadio();
-        assertEquals(expected, actual);
+        assertEquals(2, rds.getCurrentRadio());
     }
 
     @Test
