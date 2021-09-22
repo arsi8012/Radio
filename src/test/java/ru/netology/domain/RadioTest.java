@@ -34,6 +34,7 @@ class RadioTest {
 
     @Test
     void shouldNextRadio3() {
+        Radio rds = new Radio (30);
         rds.setCurrentRadio(29);
         rds.nextRadio();
         int expected = 0;
@@ -43,6 +44,7 @@ class RadioTest {
 
     @Test
     void shouldNextRadio4() {
+        Radio rds = new Radio (30);
         rds.setCurrentRadio(40);
         rds.nextRadio();
         int expected = 0;
