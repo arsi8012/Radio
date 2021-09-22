@@ -42,11 +42,11 @@ public class Radio {
 
     public void setCurrentRadio(int currentRadio) {
         if (currentRadio <= firstRadio) {
-            this.currentRadio = firstRadio;
+            this.currentRadio = currentRadio;
             return;
         }
-        if (currentRadio >= lastRadio) {
-            this.currentRadio = lastRadio;
+        if (currentRadio >= totalRadio - 1) {
+            this.currentRadio = currentRadio;
             return;
         }
         this.currentRadio = currentRadio;

@@ -113,9 +113,18 @@ class RadioTest {
     }
 
     @Test
-    void shouldSetCurrentRadio6() {
+    void shouldSetCurrentRadio4() {
         rds.setCurrentRadio(8);
         int expected = 8;
+        int actual = rds.getCurrentRadio();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldSetCurrentRadio5() {
+        Radio rds = new Radio (20);
+        rds.setCurrentRadio(15);
+        int expected = 15;
         int actual = rds.getCurrentRadio();
         assertEquals(expected, actual);
     }
