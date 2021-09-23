@@ -25,7 +25,7 @@ public class Radio {
     }
 
     public void nextRadio() {
-        if (currentRadio >= lastRadio) {
+        if (currentRadio >= totalRadio - 1) {
             currentRadio = firstRadio;
         } else {
             currentRadio += 1;

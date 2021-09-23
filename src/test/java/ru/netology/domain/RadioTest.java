@@ -53,6 +53,16 @@ class RadioTest {
     }
 
     @Test
+    void shouldNextRadio5() {
+        Radio rds = new Radio (20);
+        rds.setCurrentRadio(15);
+        rds.nextRadio();
+        int expected = 16;
+        int actual = rds.getCurrentRadio();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     void shouldPrevRadio() {
         rds.setCurrentRadio(0);
         rds.prevRadio();
